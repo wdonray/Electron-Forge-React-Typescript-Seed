@@ -1,0 +1,93 @@
+{
+  "name": "electron-forge-react-typescript",
+  "productName": "electron-forge-react-typescript",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": "./.webpack/main",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "keywords": [],
+  "author": {
+    "name": "Donray Williams",
+    "email": "donray_williams@gemvision.com"
+  },
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "plugins": [
+        [
+          "@electron-forge/plugin-webpack",
+          {
+            "mainConfig": "./config/webpack.main.config.js",
+            "renderer": {
+              "config": "./config/webpack.renderer.config.js",
+              "entryPoints": [
+                {
+                  "html": "./src/renderer/index.html",
+                  "js": "./src/renderer/index.tsx",
+                  "name": "main_window"
+                }
+              ]
+            }
+          }
+        ]
+      ],
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "electron_forge_react_typescript"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "lodash": "^4.17.15",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@electron-forge/cli": "6.0.0-beta.44",
+    "@electron-forge/maker-deb": "6.0.0-beta.44",
+    "@electron-forge/maker-rpm": "6.0.0-beta.44",
+    "@electron-forge/maker-squirrel": "6.0.0-beta.44",
+    "@electron-forge/maker-zip": "6.0.0-beta.44",
+    "@electron-forge/plugin-webpack": "^6.0.0-beta.44",
+    "@types/lodash": "^4.14.137",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "@types/webpack": "^4.39.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "electron": "6.0.2",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^1.0.0",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3"
+  }
+}
