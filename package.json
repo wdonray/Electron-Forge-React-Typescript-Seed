@@ -82,12 +82,17 @@
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "@types/webpack": "^4.39.0",
+    "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
+    "babel-plugin-lodash": "^3.3.4",
+    "babel-preset-env": "^1.7.0",
     "css-loader": "^3.2.0",
     "electron": "6.0.2",
+    "lodash-webpack-plugin": "^0.11.5",
     "source-map-loader": "^0.2.4",
     "style-loader": "^1.0.0",
     "ts-loader": "^6.0.4",
-    "typescript": "^3.5.3"
+    "typescript": "^3.5.3",
+    "webpack": "^4.39.2"
   }
 }
